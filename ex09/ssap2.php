@@ -1,5 +1,12 @@
 #!/usr/bin/php
 <?php
+function is_alpha($string)
+{
+$ascii = ord($string);
+if (($ascii >= ord("a") && $ascii <= ord("z")) || ($ascii >= ord("A") && $ascii <= ord("Z")))
+	return (1);
+return(0);
+}
 function fct_eval_array($string)
 {
 	if ($string === "")
@@ -13,25 +20,25 @@ function cmp($str1, $str2)
 	$i = 0;
 	while ($i < sizeof($str1) && $str1[$i] == $str2[$i])
 		$i++;
-if (ctype_alpha($str1[$i]))
+if (is_alpha($str1[$i]))
 {
-if (ctype_alpha($str2[$i]))
+if (is_alpha($str2[$i]))
 	$ret = strcasecmp($str1, $str2);
 else
 	$ret = -1;
 	}
-else if (ctype_digit($str1[$i]))
+else if (is_numeric($str1[$i]))
 		{
-if (ctype_alpha($str2[$i]))
+if (is_alpha($str2[$i]))
 $ret = 1;
-else	if (ctype_digit($str2[$i]))
+else	if (is_numeric($str2[$i]))
 		$ret = strcmp($str1[$i], $str2[$i]);
 	else
 		$ret = -1;
 	}
 	else
 	{
-if (ctype_alpha($str2[$i]) || ctype_digit($str2[$i]))
+if (is_alpha($str2[$i]) || is_numeric($str2[$i]))
 	$ret = 1;
 else
 	$ret = strcmp($str1[$i], $str2[$i]);
