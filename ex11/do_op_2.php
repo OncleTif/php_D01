@@ -5,6 +5,7 @@ if ($argc == 2)
 	if (strpos($argv[1], "+"))
 	{
 		$tab = explode("+", $argv[1]);
+		$tab = array_map("trim", $tab);
 		if (is_numeric($tab[0]) && is_numeric($tab[1]))
 			echo $tab[0] + $tab[1]."\n";
 		else
@@ -13,6 +14,7 @@ if ($argc == 2)
 			else if (strpos($argv[1], "*"))
 			{
 				$tab = explode("*", $argv[1]);
+				$tab = array_map("trim", $tab);
 				if (is_numeric($tab[0]) && is_numeric($tab[1]))
 					echo $tab[0] * $tab[1]."\n";
 				else
@@ -21,6 +23,7 @@ if ($argc == 2)
 					else if (strpos($argv[1], "/"))
 					{
 						$tab = explode("/", $argv[1]);
+						$tab = array_map("trim", $tab);
 						if (is_numeric($tab[0]) && is_numeric($tab[1]))
 							echo $tab[0] / $tab[1]."\n";
 						else
@@ -29,6 +32,7 @@ if ($argc == 2)
 							else if (strpos($argv[1], "%"))
 							{
 								$tab = explode("%", $argv[1]);
+								$tab = array_map("trim", $tab);
 								if (is_numeric($tab[0]) && is_numeric($tab[1]))
 									echo $tab[0] % $tab[1]."\n";
 								else
@@ -37,6 +41,7 @@ if ($argc == 2)
 									else if (strpos($argv[1], "-"))
 									{
 										$tab = explode("-", $argv[1]);
+										$tab = array_map("trim", $tab);
 										if (is_numeric($tab[0]) && is_numeric($tab[1]))
 											echo $tab[0] - $tab[1]."\n";
 										else
