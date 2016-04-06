@@ -19,7 +19,7 @@ foreach ($tab as $param)
 {
 $merge = array_merge($merge, $param);
 }
-sort($merge);
+sort($merge, SORT_STRING);
 foreach ($merge as $word)
 echo $word."\n";
 }
