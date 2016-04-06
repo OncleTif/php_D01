@@ -8,7 +8,7 @@ function fct_eval_array($string)
 	function ft_split($string)
 	{
 		$array = array_filter(explode(" ", $string), "fct_eval_array");
-		sort($array);
+		sort($array, SORT_STRING);
 		return($array);
 		}
 ?>
