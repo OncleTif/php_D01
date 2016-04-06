@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 function fct_eval_array($string)
 {
